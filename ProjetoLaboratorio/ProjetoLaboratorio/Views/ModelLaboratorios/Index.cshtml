@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ProjetoLaboratorio.Models.ModelLaboratorio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtdComputadores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtdAlunos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Projetor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Software1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Software2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Software3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SistemaOperacional)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtdComputadores)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtdAlunos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Projetor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Software1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Software2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Software3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SistemaOperacional)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

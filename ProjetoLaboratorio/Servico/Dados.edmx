@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbLaboratorioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Laboratorio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="250" />
+          <Property Name="qtdeComputadores" Type="int" />
+          <Property Name="qtdeAlunos" Type="int" />
+          <Property Name="projetor" Type="bit" />
+          <Property Name="software1" Type="varchar" MaxLength="250" />
+          <Property Name="software2" Type="varchar" MaxLength="250" />
+          <Property Name="software3" Type="varchar" MaxLength="250" />
+          <Property Name="sistemaOperacional" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="dbLaboratorioModelStoreContainer">
+          <EntitySet Name="Laboratorio" EntityType="Self.Laboratorio" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbLaboratorioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Laboratorio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="qtdeComputadores" Type="Int32" />
+          <Property Name="qtdeAlunos" Type="Int32" />
+          <Property Name="projetor" Type="Boolean" />
+          <Property Name="software1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="software2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="software3" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sistemaOperacional" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="dbLaboratorioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Laboratorio" EntityType="Self.Laboratorio" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbLaboratorioModelStoreContainer" CdmEntityContainer="dbLaboratorioEntities">
+          <EntitySetMapping Name="Laboratorio">
+            <EntityTypeMapping TypeName="dbLaboratorioModel.Laboratorio">
+              <MappingFragment StoreEntitySet="Laboratorio">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="qtdeComputadores" ColumnName="qtdeComputadores" />
+                <ScalarProperty Name="qtdeAlunos" ColumnName="qtdeAlunos" />
+                <ScalarProperty Name="projetor" ColumnName="projetor" />
+                <ScalarProperty Name="software1" ColumnName="software1" />
+                <ScalarProperty Name="software2" ColumnName="software2" />
+                <ScalarProperty Name="software3" ColumnName="software3" />
+                <ScalarProperty Name="sistemaOperacional" ColumnName="sistemaOperacional" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

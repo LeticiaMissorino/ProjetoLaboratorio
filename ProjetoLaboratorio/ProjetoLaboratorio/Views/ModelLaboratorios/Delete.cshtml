@@ -1,0 +1,88 @@
+﻿@model ProjetoLaboratorio.Models.ModelLaboratorio
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Delete</h2>
+
+<h3>Tem Certeza que deseja Excluir essa Laboratorio?</h3>
+<div>
+    <h4>Laboratorio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtdComputadores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtdComputadores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtdAlunos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtdAlunos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Projetor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Projetor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Software1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Software1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Software2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Software2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Software3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Software3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SistemaOperacional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SistemaOperacional)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
